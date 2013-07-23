@@ -1,0 +1,13 @@
+﻿@model PollProject.Models.PollListViewModel
+
+@{
+    ViewBag.Title = "Select the poll";
+}
+
+    <h2>Select the poll from the list below:</h2>
+    @foreach(var poll in Model.Polls)
+    {
+        <div>
+            @Html.ActionLink(poll.Title, "Take", "Poll", new { id = poll.Id }, null)
+        </div>
+    }

@@ -1,0 +1,16 @@
+﻿@using PollProject.Models
+@model SingleSelectionQuestionViewModel
+           
+@Html.Hidden("Type", typeof(SingleSelectionQuestionViewModel).Name)
+@Html.HiddenFor(x => x.Id)
+@Html.HiddenFor(x => x.Title)
+
+<div>
+    <h4>@Html.DisplayFor(x => x.Title)</h4>
+</div>
+
+<div>
+    @Html.DropDownListFor(x => x.SelectedAnswerId, new SelectList(Model.Answers, "Id", "Title", Model.SelectedAnswerId), "", new {@class = "selectedAnswer"})
+    @Html.HiddenFor(x => x.SelectedAnswerText)
+    @Html.ValidationMessageFor(x => x.SelectedAnswerId)
+</div>

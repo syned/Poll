@@ -1,0 +1,14 @@
+﻿@using PollProject.Models
+@model TextQuestionViewModel
+           
+@Html.Hidden("Type", typeof(TextQuestionViewModel).Name)
+@Html.HiddenFor(x => x.Id)
+@Html.HiddenFor(x => x.Title)
+<div>
+    <h4>@Html.DisplayFor(x => x.Title)</h4>
+</div>
+<div>
+    @Html.LabelFor(x => x.AnswerText, "Enter answer here:")
+    @Html.EditorFor(x => x.AnswerText)
+    @Html.ValidationMessageFor(x => x.AnswerText)
+</div>

@@ -1,0 +1,13 @@
+﻿@using PollProject.Models
+@model MultiSelectionQuestionViewModel
+
+@Html.Hidden("Type", typeof(MultiSelectionQuestionViewModel).Name)
+@Html.HiddenFor(x => x.Id)
+@Html.HiddenFor(x => x.Title)
+<div>
+    <h4>@Html.DisplayFor(x => x.Title)</h4>
+</div>
+<div>
+    @Html.EditorFor(x => x.Answers)
+</div>
+

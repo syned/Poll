@@ -1,0 +1,8 @@
+﻿@model PollProject.Models.AnswerViewModel
+
+@Html.HiddenFor(x => x.Id)
+@Html.HiddenFor(x => x.Title)
+<div class="checkbox">
+    @Html.CheckBoxFor(x => x.IsChecked)
+    @Html.LabelFor(x => x.IsChecked, Model.Title)
+</div>

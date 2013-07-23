@@ -1,0 +1,23 @@
+﻿@model PollProject.Models.Pagination.IndexViewModel
+
+<h2>Current page is: @Model.CurrentPage</h2>
+
+<div class="pagination">
+  <ul>
+    <li>@Html.ActionLink("Prev", "Index", new { page = Model.CurrentPage - 1 })</li>
+      @foreach (var page in Model.PageNumbers)
+      {
+          <li class ="@page.Active @page.Disabled">
+          @if (string.IsNullOrEmpty(page.Active + page.Disabled))
+          {
+              @Html.ActionLink(page.Title, "Index", new { page = page.Number })
+          }
+          else
+          {
+              <span>@page.Title</span>
+          }
+          </li>
+      }
+    <li>@Html.ActionLink("Next", "Index", new { page = Model.CurrentPage + 1 })</li>
+  </ul>
+</div>
